@@ -13,7 +13,10 @@ router.post(
     [
         check('name', 'Name is required').not().isEmpty(),
         check('email', 'Email is required').isEmail(),
-        check('password', 'Valid Password is required with min 6 characters').isLength({ min: 6 }),
+        check(
+            'password',
+            'Valid Password is required with min 6 characters'
+        ).isLength({ min: 6 }),
     ],
     (req, res) => {
         const errors = validationResult(req);
