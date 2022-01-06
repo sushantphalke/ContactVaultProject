@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 const UserSchema = mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users',
+    },
     name: {
         type: String,
         required: true,
@@ -7,16 +11,17 @@ const UserSchema = mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true,
     },
-    password: {
+    phone: {
         type: String,
-        required: true,
+    },
+    type: {
+        type: String,
+        default: 'Personal',
     },
     date: {
         type: String,
-        default : Date.now,
-        
+        default: Date.now,
     },
 });
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('contact', ContactSchema);
