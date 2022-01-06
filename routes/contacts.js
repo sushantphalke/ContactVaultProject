@@ -5,7 +5,7 @@ const { body, validationResult, check } = require('express-validator');
 
 const User = require('../models/User');
 const Contact = require('../models/contact');
-const contact = require('../models/contact');
+// const contact = require('../models/contact');
 // @route   GET api/contacts
 // @desc    Get all user contacts
 // @access  Private
@@ -55,11 +55,11 @@ router.post(
 // @route   PUT api/contacts/:id
 // @desc    Update contact
 // @access  Private
-router.post('/:id', auth, async (req, res) => {
+router.p('/:id', auth, async (req, res) => {
     // res.send('Update contact');
     const { name, email, phone, type } = req.body;
 
-    //Build Contact Object
+    //Build contact object
     const contactFields = {};
     if (name) contactFields.name = name;
     if (email) contactFields.email = email;
@@ -70,7 +70,7 @@ router.post('/:id', auth, async (req, res) => {
         let contact = await Contact.findById(req.params.id);
         if (!contact) return res.status(404).json({ msg: 'Contact Not Found' });
 
-        //   make sure user owns contact
+        //   Make sure user owns contact
         if (contact.user.toString() !== req.user.id) {
             return res.status(401).json({ msg: 'Not Authorized' });
         }
@@ -82,7 +82,7 @@ router.post('/:id', auth, async (req, res) => {
         res.json(contact);
     } catch (err) {
         console.error(err.message);
-        res.status();
+        res.status(500).send('Server Error');
     }
 });
 
