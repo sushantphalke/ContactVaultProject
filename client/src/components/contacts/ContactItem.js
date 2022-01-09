@@ -6,7 +6,7 @@ import {
 
    
 } from 'react-icons/md';
-import {BsTrashFill,BsVectorPen}from 'react-icons/bs'
+import {BsTrash,BsVectorPen}from 'react-icons/bs'
 
 export const ContactItem = ({ contact }) => {
     const { id, name, email, phone, type } = contact;
@@ -36,7 +36,7 @@ export const ContactItem = ({ contact }) => {
                 </button>
                 <button className='btn-sm' style={{ marginInlineEnd: '1em' }}>
                     <div>
-                        <BsTrashFill style={{ fontSize: '130%',color:'red' }} />
+                        <BsTrash style={{ fontSize: '130%',color:'red' }} />
                     </div>
                     Delete
                 </button>
