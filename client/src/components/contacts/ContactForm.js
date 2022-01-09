@@ -10,7 +10,7 @@ export const ContactForm = () => {
     });
     const { name, email, phone, type } = contact;
     const onChange =(e)=>({
-      ...contact,[e.target.name]:e.target.value
+      // ...contact,[e.target.name]:e.target.value
     })
     return (
         <form>
