@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaHome } from 'react-icons/fa';
-import { MdPersonSearch } from 'react-icons/md';
+import {MdAssignmentInd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 function Navbar({ title }) {
@@ -9,7 +9,7 @@ function Navbar({ title }) {
         <>
             <div className='navbar'>
                 <h2>
-                    <MdPersonSearch  />
+                    <MdAssignmentInd/>
                     {title}
                 </h2>
 
