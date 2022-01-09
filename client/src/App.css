@@ -213,6 +213,7 @@ img {
 .btn-block {
     display: block;
     width: 100%;
+    height: max-content;
 }
 
 .btn-sm {

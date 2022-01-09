@@ -6,11 +6,12 @@ export const ContactForm = () => {
         name: '',
         email: '',
         phone: '',
-        type: '',
+        type: 'personal',
     });
     const { name, email, phone, type } = contact;
-    const onChange =(e)=>({
-      ...contact,[e.target.name]:e.target.value
+    const onChange = (e) => ({
+        ...contact,
+        [e.target.name]: e.target.value,
     });
     return (
         <form>
@@ -36,23 +37,26 @@ export const ContactForm = () => {
                 value={phone}
                 onChange={onChange}
             />
-            <h5>Contact Type
-            </h5>
+            <h5>Contact Type</h5>
             <input
                 type='radio'
-                placeholder='Type'
                 name='type'
                 value='personal'
                 checked={type === 'personal'}
-            />Personal{'  '}
-             <input
+            />
+            Personal{'  '}
+            <input
                 type='radio'
-                placeholder='Type'
                 name='type'
-                value='Professional'
+                value='professional'
                 checked={type === 'Professional'}
-            />Professional{'  '}
-            <button className="btn btn-primary btn-block" type='submit' value="Add Contact"></button>
+            />
+            Professional{'  '}
+            <input
+                className='btn btn-primary btn-block'
+                type='submit'
+                value='Add Contact'
+            ></input>
         </form>
     );
 };
