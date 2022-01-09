@@ -1,9 +1,14 @@
 import React from 'react';
-import Navbar from '../layout/Navbar';
+import Contacts from '../contacts/Contacts';
 
-export default function Home() {
+const Home = () => {
     return (
-        <div>
+        <div className='grid-2'>
+            <div>{/*Contact Form*/}</div>
+            <div>
+                <Contacts />
+            </div>
         </div>
     );
-}
+};
+export default Home;

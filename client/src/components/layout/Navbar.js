@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaHome } from 'react-icons/fa';
-import {MdAssignmentInd } from 'react-icons/md';
+import { MdAssignmentInd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 function Navbar({ title }) {
@@ -9,12 +9,12 @@ function Navbar({ title }) {
         <>
             <div className='navbar'>
                 <h2>
-                    <MdAssignmentInd/>
+                    <MdAssignmentInd />
                     {title}
                 </h2>
 
                 <ul className='navbar-ul'>
-                    <Link to='/Home'>
+                    <Link to='/'>
                         <li className='navbar-btn'>
                             <FaHome />
                             Home

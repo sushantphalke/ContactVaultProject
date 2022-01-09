@@ -21,28 +21,28 @@ const ContactState = (props) => {
                 name: 'sushant phalke',
                 email: 'sushantphalke@gov.world',
                 phone: '34343434434',
-                type: 'personal',
+                type: 'Professional',
             },
             {
                 id: 2,
                 name: 'tillu marchant',
                 email: 'tillumarchant@bhikari.com',
                 phone: '7696900676',
-                type: 'personal',
+                type: 'Personal',
             },
             {
                 id: 3,
                 name: 'pablovisco',
                 email: 'pablovisco@millionaire.com',
                 phone: '6798876976',
-                type: 'personal',
+                type: 'Personal',
             },
             {
                 id: 4,
                 name: 'narendramodi',
                 email: 'narendramodi@420.gov.in',
                 phone: '9022664334',
-                type: 'personal',
+                type: 'Personal',
             },
         ],
     };
@@ -57,13 +57,13 @@ const ContactState = (props) => {
     // filter contacts
     // clear filter
     return (
-        <ContactContext.Provider
+        <contactContext.Provider
             value={{
                 contacts: state.contacts,
             }}
         >
             {props.children}
-        </ContactContext.Provider>
+        </contactContext.Provider>
     );
 };
 export default ContactState;
