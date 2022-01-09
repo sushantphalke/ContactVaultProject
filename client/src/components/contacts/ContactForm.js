@@ -11,7 +11,7 @@ export const ContactForm = () => {
     const { name, email, phone, type } = contact;
     const onChange =(e)=>({
       ...contact,[e.target.name]:e.target.value
-    })
+    });
     return (
         <form>
             <h2 className='text-primary'>Add Contact</h2>
