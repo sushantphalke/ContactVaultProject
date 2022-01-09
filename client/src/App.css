@@ -371,7 +371,10 @@ table th {
 .navbar ul {
   display: flex;
 }
-
+.navbar-btn{
+  margin-left :1em;
+  margin-right :1em;
+}
 .navbar a {
   color: #fff;
   padding: 0.45rem;

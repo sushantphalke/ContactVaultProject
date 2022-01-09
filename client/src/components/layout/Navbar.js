@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import {FaClipboardList,FaHome} from 'react-icons/fa';
 
 function Navbar({ title }) {
     return (
         <>
             <div className='navbar'>
-                <h1>{title}</h1>
+                <h2><FaClipboardList/>{title}</h2>
                 <ul className='navbar-ul'>
-                    <li>Home</li>
-                    <li>About</li>
+                    <li className='navbar-btn'><FaHome/>Home</li>
+                    <li className='navbar-btn'>About</li>
                 </ul>
             </div>
         </>
