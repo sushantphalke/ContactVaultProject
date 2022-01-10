@@ -1,4 +1,3 @@
-import contact from '../../../../models/contact';
 import {
     ADD_CONTACT,
     DELETE_CONTACT,
