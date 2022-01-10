@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     MdOutgoingMail,
     MdPhoneInTalk,
     MdOutlineStarOutline,
-
-   
 } from 'react-icons/md';
-import {BsTrash,BsVectorPen}from 'react-icons/bs'
+import { BsTrash, BsVectorPen } from 'react-icons/bs';
+import ContactContext from '../../context/contact/contactContext';
 
 export const ContactItem = ({ contact }) => {
+    const contactContext = useContext(ContactContext);
+    const {deleteContact} = contactContext;
     const { id, name, email, phone, type } = contact;
+
+    const onDelete =()=>{
+      deleteContact(id);
+
+    }
+
     return (
         <div className='card bg-light'>
             <h3 className='text-primary text-left'>
@@ -30,13 +37,15 @@ export const ContactItem = ({ contact }) => {
             <div style={{ display: 'flex' }}>
                 <button className='btn-sm' style={{ marginInlineEnd: '1em' }}>
                     <div>
-                        <BsVectorPen style={{ fontSize: '130%' ,color:'blue'}} />
+                        <BsVectorPen
+                            style={{ fontSize: '130%', color: 'blue' }}
+                        />
                     </div>
                     Edit
                 </button>
-                <button className='btn-sm' style={{ marginInlineEnd: '1em' }}>
+                <button className='btn-sm' style={{ marginInlineEnd: '1em' }} onClick={onDelete()}>
                     <div>
-                        <BsTrash style={{ fontSize: '130%',color:'red' }} />
+                        <BsTrash style={{ fontSize: '130%', color: 'red' }} />
                     </div>
                     Delete
                 </button>
@@ -45,7 +54,9 @@ export const ContactItem = ({ contact }) => {
                 {email && (
                     <li className='list-item'>
                         <div>
-                            <MdOutgoingMail style={{ fontSize: '150%' ,color:'blue'}} />
+                            <MdOutgoingMail
+                                style={{ fontSize: '150%', color: 'blue' }}
+                            />
                         </div>
                         <div> {email}</div>
                     </li>
@@ -53,7 +64,9 @@ export const ContactItem = ({ contact }) => {
                 {phone && (
                     <li className='list-item'>
                         <div>
-                            <MdPhoneInTalk style={{ fontSize: '150%' ,color:'green'}} />
+                            <MdPhoneInTalk
+                                style={{ fontSize: '150%', color: 'green' }}
+                            />
                         </div>
                         <div>{phone}</div>
                     </li>
