@@ -10,8 +10,7 @@ import {
     CLEAR_FILTER,
     UPDATE_CONTACT,
     FILTER_CONTACTS,
-    SET_ALERT,
-    REMOVE_ALERT,
+    
 } from '../types';
 const ContactState = (props) => {
     const initialState = {
@@ -50,10 +49,10 @@ const ContactState = (props) => {
     const [state, dispatch] = useReducer(contactReducer, initialState);
 
     //  add contact
-    const addContact = contact=>{
-      contact.id = uuid.v4();
-      dispatch({type:ADD_CONTACT,payload:contact})
-    }
+    const addContact = (contact) => {
+        contact.id = uuid.v4();
+        dispatch({ type: ADD_CONTACT, payload: contact });
+    };
     // delete contact
     // set current contact
     // Clear current contact
@@ -64,6 +63,7 @@ const ContactState = (props) => {
         <contactContext.Provider
             value={{
                 contacts: state.contacts,
+                addContact
             }}
         >
             {props.children}

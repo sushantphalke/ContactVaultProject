@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import React from 'react';
 import ContactContext from '../../context/contact/contactContext';
 
-export const ContactForm = () => {
+const ContactForm = () => {
     const contactContext = useContext(ContactContext);
     const [contact, setContact] = useState({
         name: '',
@@ -12,10 +12,7 @@ export const ContactForm = () => {
     });
     const { name, email, phone, type } = contact;
     const onChange = (e) =>
-        setContact({
-            ...contact,
-            [e.target.name]: e.target.value,
-        });
+        setContact({ ...contact, [e.target.name]: e.target.value });
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -57,6 +54,7 @@ export const ContactForm = () => {
                 name='type'
                 value='personal'
                 checked={type === 'personal'}
+                onChange={onChange}
             />
             Personal{'  '}
             <input
@@ -64,13 +62,17 @@ export const ContactForm = () => {
                 name='type'
                 value='professional'
                 checked={type === 'Professional'}
+                onChange={onChange}
             />
             Professional{'  '}
-            <input
-                className='btn btn-primary btn-block'
-                type='submit'
-                value='Add Contact'
-            ></input>
+            <div>
+                <input
+                    type='submit'
+                    value='Add Contact'
+                    className='btn btn-primary btn-block'
+                ></input>
+            </div>
         </form>
     );
 };
+export default ContactForm;
