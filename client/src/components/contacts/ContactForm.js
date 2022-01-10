@@ -2,17 +2,18 @@ import { useState } from 'react';
 import React from 'react';
 
 export const ContactForm = () => {
-    const [contact, setContac] = useState({
+    const [contact, setContact] = useState({
         name: '',
         email: '',
         phone: '',
         type: 'personal',
     });
     const { name, email, phone, type } = contact;
-    const onChange = (e) => ({
-        ...contact,
-        [e.target.name]: e.target.value,
-    });
+    const onChange = (e) =>
+        setContact({
+            ...contact,
+            [e.target.name]: e.target.value,
+        });
     return (
         <form>
             <h2 className='text-primary'>Add Contact</h2>
