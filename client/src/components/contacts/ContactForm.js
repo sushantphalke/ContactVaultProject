@@ -72,7 +72,7 @@ const ContactForm = () => {
                     className='btn btn-primary btn-block'
                 ></input>
             </div>
-        {/* </form> */}
+        </form>
     );
 };
 export default ContactForm;
