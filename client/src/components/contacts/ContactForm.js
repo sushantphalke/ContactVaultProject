@@ -66,11 +66,11 @@ const ContactForm = () => {
             />
             Professional{'  '}
             <div>
-                <input
+                {/* <input
                     type='submit'
                     value='Add Contact'
                     className='btn btn-primary btn-block'
-                ></input>
+                ></input> */}
             </div>
         </form>
     );
