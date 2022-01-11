@@ -24,7 +24,7 @@ const ContactState = (props) => {
             {
                 id: 2,
                 name: 'tillu marchant',
-                email: 'tillumarchant@bhikari.com',
+                email: 'tillumarchant@adobe.com',
                 phone: '7696900676',
                 type: 'Personal',
             },
@@ -38,7 +38,7 @@ const ContactState = (props) => {
             {
                 id: 4,
                 name: 'narendramodi',
-                email: 'narendramodi@420.gov.in',
+                email: 'narendramodi@.gov.in',
                 phone: '9022664334',
                 type: 'Personal',
             },
@@ -66,6 +66,9 @@ const ContactState = (props) => {
         dispatch({ type: CLEAR_CURRENT });
     };
     // update contact
+    const updateContact=(contact)=>{
+        dispatch({type:UPDATE_CONTACT,payload:contact});
+    }
     // filter contacts
     // clear filter
     return (
@@ -75,6 +78,9 @@ const ContactState = (props) => {
                 current: state.current,
                 addContact,
                 deleteContact,
+                setCurrent,
+                clearCurrent,
+                updateContact
             }}
         >
             {props.children}
