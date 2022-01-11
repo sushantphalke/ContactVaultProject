@@ -43,7 +43,7 @@ export const ContactItem = ({ contact }) => {
                     </div>
                     Edit
                 </button>
-                <button className='btn-sm' style={{ marginInlineEnd: '1em' }} onClick={onDelete()}>
+                <button className='btn-sm' style={{ marginInlineEnd: '1em' }} onClick={onDelete} >
                     <div>
                         <BsTrash style={{ fontSize: '130%', color: 'red' }} />
                     </div>
