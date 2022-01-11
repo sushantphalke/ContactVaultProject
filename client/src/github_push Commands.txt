@@ -1,0 +1,30 @@
+Step 1: Open Git Bash and change the current working directory to your local project by use of cd command.
+   
+cd newRepo/
+
+Step 2: Initialize the local directory as a Git repository.
+
+ git init 
+
+Step 3: Stage the files for the first commit by adding them to the local repository
+
+git add .
+
+Step 4: By “git status” you can see the staged files
+
+Step 5: Commit the files that you’ve staged in your local repository.
+
+git commit -m "First commit"
+
+Push files to your Git repository
+Step 6: Go to Github repository and in code section copy the URL.
+
+Step 7: In the Command prompt, add the URL for your repository where your local repository will be pushed.
+
+git remote add origin repository_URL
+
+Step 8: Push the changes in your local repository to GitHub.
+
+git push origin master
+
+git push -f origin master
