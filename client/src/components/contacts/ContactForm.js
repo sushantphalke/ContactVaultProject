@@ -29,6 +29,20 @@ const ContactForm = () => {
     const onChange = (e) =>
         setContact({ ...contact, [e.target.name]: e.target.value });
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (current === null) {
+            addContact(contact);
+        } else {
+            updateContact(contact);
+        }
+        setContact({
+            name: '',
+            email: '',
+            phone: '',
+            type: 'Personal',
+        });
+    };
     const clearAll = () => {
         clearCurrent();
     };
