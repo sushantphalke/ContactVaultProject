@@ -11,12 +11,13 @@ const ContactForm = () => {
         type: 'Personal',
     });
     const { name, email, phone, type } = contact;
+    const {addContact} = contactContext;
     const onChange = (e) =>
         setContact({ ...contact, [e.target.name]: e.target.value });
 
     const onSubmit =e=> {
         e.preventDefault();
-        contactContext.addContact(contact);
+        addContact(contact);
         setContact({
             name: '',
             email: '',
