@@ -9,14 +9,13 @@ import ContactContext from '../../context/contact/contactContext';
 
 export const ContactItem = ({ contact }) => {
     const contactContext = useContext(ContactContext);
-    const {deleteContact,setCurrent,clearCurrent} = contactContext;
+    const { deleteContact, setCurrent, clearCurrent } = contactContext;
     const { id, name, email, phone, type } = contact;
 
-    const onDelete =()=>{
-      deleteContact(id);
-      clearCurrent();   
-
-    }
+    const onDelete = () => {
+        deleteContact(id);
+        clearCurrent();
+    };
 
     return (
         <div className='card bg-light'>
@@ -36,7 +35,11 @@ export const ContactItem = ({ contact }) => {
                 </span>
             </h3>
             <div style={{ display: 'flex' }}>
-                <button className='btn-sm' style={{ marginInlineEnd: '1em' }} onClick={()=>setCurrent(contact)}>
+                <button
+                    className='btn-sm'
+                    style={{ marginInlineEnd: '1em' }}
+                    onClick={() => setCurrent(contact)}
+                >
                     <div>
                         <BsVectorPen
                             style={{ fontSize: '130%', color: 'blue' }}
@@ -44,7 +47,11 @@ export const ContactItem = ({ contact }) => {
                     </div>
                     Edit
                 </button>
-                <button className='btn-sm' style={{ marginInlineEnd: '1em' }} onClick={onDelete} >
+                <button
+                    className='btn-sm'
+                    style={{ marginInlineEnd: '1em' }}
+                    onClick={onDelete}
+                >
                     <div>
                         <BsTrash style={{ fontSize: '130%', color: 'red' }} />
                     </div>
