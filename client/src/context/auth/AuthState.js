@@ -11,60 +11,36 @@ import {
   CLEAR_ERRORS
     
 } from '../types';
-const ContactState = (props) => {
+const AuthState = (props) => {
     const initialState = {
-        
+        token : localStorage.getItem('token'),
+        isAuthenticated:null, 
+        loading:true,
+        error:null,
     };
 
-    const [state, dispatch] = useReducer(contactReducer, initialState);
+
+    const [state, dispatch] = useReducer(authReducer, initialState);
     
+// Load User
+// Resister user
+// Login
+// Logout
+// clear errors
 
-    //  add contact
-    const addContact = (contact) => {
-        contact.id = uuidv4;
-        dispatch({ type: ADD_CONTACT, payload: contact });
-    };
-    // delete contact
-    const deleteContact = (id) => {
-        dispatch({ type: DELETE_CONTACT, payload: id });
-    };
-    // set current contact
-    const setCurrent = (contact) => {
-        dispatch({ type: SET_CURRENT, payload: contact });
-    };
-    // Clear current contact
-    const clearCurrent = () => {
-        dispatch({ type: CLEAR_CURRENT });
-    };
-    // Update contact
-    const updateContact = (contact) => {
-        dispatch({ type: UPDATE_CONTACT, payload: contact });
-    };
-    // filter contacts
-    const filterContacts = (text) => {
-        dispatch({ type: FILTER_CONTACTS, payload: text });
-    };
-    // clear filter
-    const clearFilter = () => {
-        dispatch({ type: CLEAR_FILTER});
-    };
+ 
     return (
-        <contactContext.Provider
+        <authContext.Provider
             value={{
-                contacts: state.contacts,
-                current: state.current,
-                filtered:state.filtered,
-                addContact,
-                deleteContact,
-                setCurrent,
-                clearCurrent,
-                updateContact,
-                filterContacts,
-                clearFilter,
-            }}
+                token:state.token,
+                isAuthenticated:state.isAuthenticated,
+                loading:state.loading,
+                user:state.user,
+                error:state.error
+            }}  
         >
             {props.children}
-        </contactContext.Provider>
+        </authContext.Provider>
     );
 };
-export default ContactState;
+export default AuhtState;
