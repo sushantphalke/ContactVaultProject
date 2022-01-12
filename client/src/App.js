@@ -5,25 +5,28 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import { Fragment } from 'react';
 import ContactState from './context/contact/ContactState';
+import AuhtState from './context/auth/AuthState';
 const title = 'ContactVault';
 
 const App = () => {
     return (
-        <ContactState>
-            <Router>
-                <Fragment>
-                    <Switch>
-                        <div className='container'>
-                            <Navbar title={title} />
-                            {/* <h1 className='navbar-btn'>ContactVault</h1> */}
-                            <Route exact path='/' component={Home}></Route>
-                            <Route path='/About' component={About}></Route>
-                            <div></div>
-                        </div>
-                    </Switch>
-                </Fragment>
-            </Router>
-        </ContactState>
+        <AuhtState>
+            <ContactState>
+                <Router>
+                    <Fragment>
+                        <Switch>
+                            <div className='container'>
+                                <Navbar title={title} />
+                                {/* <h1 className='navbar-btn'>ContactVault</h1> */}
+                                <Route exact path='/' component={Home}></Route>
+                                <Route path='/About' component={About}></Route>
+                                <div></div>
+                            </div>
+                        </Switch>
+                    </Fragment>
+                </Router>
+            </ContactState>
+        </AuhtState>
     );
 };
 
