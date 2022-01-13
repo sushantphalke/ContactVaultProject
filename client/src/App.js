@@ -6,6 +6,8 @@ import About from './components/pages/About';
 import { Fragment } from 'react';
 import ContactState from './context/contact/ContactState';
 import AuhtState from './context/auth/AuthState';
+import Register from './components/auth/Register';
+import Login from './components/auth/login';
 const title = 'ContactVault';
 
 const App = () => {
@@ -20,6 +22,8 @@ const App = () => {
                                 {/* <h1 className='navbar-btn'>ContactVault</h1> */}
                                 <Route exact path='/' component={Home}></Route>
                                 <Route path='/About' component={About}></Route>
+                                <Route path='/register' component={Register}></Route>
+                                <Route path='/login' component={Login}></Route>
                                 <div></div>
                             </div>
                         </Switch>
