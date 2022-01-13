@@ -20,6 +20,12 @@ function Navbar({ title }) {
                             Home
                         </li>
                     </Link>
+                    <Link to='/Register'>
+                        <li className='navbar-btn'>Register</li>
+                    </Link>
+                    <Link to='/login'>
+                        <li className='navbar-btn'>Login</li>
+                    </Link>
                     <Link to='/About'>
                         <li className='navbar-btn'>About</li>
                     </Link>
