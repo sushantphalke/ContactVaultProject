@@ -43,7 +43,9 @@ const config={
     }
 };  
 try {
-    const res=await axios.post('/api/users',formData,config)
+    const res=await axios.post('/api/users',formData,config);
+}catch(err){
+    dispatch({type:AUTH_ERROR}); 
 }
 }
 // Login
