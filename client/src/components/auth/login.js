@@ -18,7 +18,7 @@ const Login = () => {
     return (
         <div className='form-container'>
             <h1>
-                Account <span className='text-primary'>Register</span>
+                Account <span className='text-primary'>Login</span>
             </h1>
             <form onSubmit={onSubmit}>
                 <div className='form-group'>
@@ -46,7 +46,7 @@ const Login = () => {
 
                 <input
                     type='submit'
-                    value='Register'
+                    value='Login'
                     className='btn btn-primary btn-block'
                 />
             </form>

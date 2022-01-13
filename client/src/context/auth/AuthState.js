@@ -43,4 +43,4 @@ const AuthState = (props) => {
         </authContext.Provider>
     );
 };
-export default AuhtState;
+export default AuthState;
