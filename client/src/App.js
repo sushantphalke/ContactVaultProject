@@ -1,4 +1,5 @@
 import Navbar from './components/layout/Navbar';
+import Alerts from './components/layout/Alerts';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
@@ -18,9 +19,10 @@ const App = () => {
                 <AlertState>
                     <Router>
                         <Fragment>
-                            <Switch>
-                                <div className='container'>
-                                    <Navbar title={title} />
+                            <Navbar title={title} />
+                            <div className='container'>
+                                <Alerts/>
+                                <Switch>
                                     {/* <h1 className='navbar-btn'>ContactVault</h1> */}
                                     <Route
                                         exact
@@ -39,9 +41,8 @@ const App = () => {
                                         path='/login'
                                         component={Login}
                                     ></Route>
-                                    <div></div>
-                                </div>
-                            </Switch>
+                                </Switch>
+                            </div>
                         </Fragment>
                     </Router>
                 </AlertState>

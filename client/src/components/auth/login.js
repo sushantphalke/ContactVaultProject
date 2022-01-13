@@ -27,9 +27,12 @@ const Login = () => {
                     </label>
                     <input
                         type='email'
-                        name={email}
+                        name='email'
+                        placeholder='email address'
                         value={email}
                         onChange={onChange}
+                        required
+                        
                     ></input>
                 </div>
                 <div className='form-group'>
@@ -38,9 +41,12 @@ const Login = () => {
                     </label>
                     <input
                         type='password'
-                        name={password}
+                        name='password'
+                        placeholder='password'
                         value={password}
                         onChange={onChange}
+                        required
+                        minLength='6'
                     ></input>
                 </div>
 

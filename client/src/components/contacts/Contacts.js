@@ -22,7 +22,7 @@ const Contacts = () => {
                               <CSSTransition
                                   className='item'
                                   key={contact.id}
-                                  timeout={500}
+                                  timeout={50}
                               >
                                   <ContactItem contact={contact} />
                               </CSSTransition>
@@ -31,7 +31,7 @@ const Contacts = () => {
                               <CSSTransition
                                   className='item'
                                   key={contact.id}
-                                  timeout={500}
+                                  timeout={50}
                               >
                                   <ContactItem contact={contact} />
                               </CSSTransition>
