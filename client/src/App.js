@@ -10,8 +10,12 @@ import AuhtState from './context/auth/AuthState';
 import Register from './components/auth/Register';
 import Login from './components/auth/login';
 import AlertState from './context/alert/AlertState';
+import setAuthToken from './utils/setAuthToken';
 const title = 'ContactVault';
 
+if (localStorage.token) {
+    setAuthToken(localStorage.token);
+}
 const App = () => {
     return (
         <AuhtState>
@@ -21,7 +25,7 @@ const App = () => {
                         <Fragment>
                             <Navbar title={title} />
                             <div className='container'>
-                                <Alerts/>
+                                <Alerts />
                                 <Switch>
                                     {/* <h1 className='navbar-btn'>ContactVault</h1> */}
                                     <Route
