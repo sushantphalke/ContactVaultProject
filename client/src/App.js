@@ -8,27 +8,43 @@ import ContactState from './context/contact/ContactState';
 import AuhtState from './context/auth/AuthState';
 import Register from './components/auth/Register';
 import Login from './components/auth/login';
+import AlertState from './context/alert/AlertState';
 const title = 'ContactVault';
 
 const App = () => {
     return (
         <AuhtState>
             <ContactState>
-                <Router>
-                    <Fragment>
-                        <Switch>
-                            <div className='container'>
-                                <Navbar title={title} />
-                                {/* <h1 className='navbar-btn'>ContactVault</h1> */}
-                                <Route exact path='/' component={Home}></Route>
-                                <Route path='/About' component={About}></Route>
-                                <Route path='/register' component={Register}></Route>
-                                <Route path='/login' component={Login}></Route>
-                                <div></div>
-                            </div>
-                        </Switch>
-                    </Fragment>
-                </Router>
+                <AlertState>
+                    <Router>
+                        <Fragment>
+                            <Switch>
+                                <div className='container'>
+                                    <Navbar title={title} />
+                                    {/* <h1 className='navbar-btn'>ContactVault</h1> */}
+                                    <Route
+                                        exact
+                                        path='/'
+                                        component={Home}
+                                    ></Route>
+                                    <Route
+                                        path='/About'
+                                        component={About}
+                                    ></Route>
+                                    <Route
+                                        path='/register'
+                                        component={Register}
+                                    ></Route>
+                                    <Route
+                                        path='/login'
+                                        component={Login}
+                                    ></Route>
+                                    <div></div>
+                                </div>
+                            </Switch>
+                        </Fragment>
+                    </Router>
+                </AlertState>
             </ContactState>
         </AuhtState>
     );
