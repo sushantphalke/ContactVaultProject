@@ -3,6 +3,7 @@ import {
     MdOutgoingMail,
     MdPhoneInTalk,
     MdOutlineStarOutline,
+    MdHome,
 } from 'react-icons/md';
 import { BsTrash, BsVectorPen } from 'react-icons/bs';
 import ContactContext from '../../context/contact/contactContext';
@@ -10,7 +11,7 @@ import ContactContext from '../../context/contact/contactContext';
 export const ContactItem = ({ contact }) => {
     const contactContext = useContext(ContactContext);
     const { deleteContact, setCurrent, clearCurrent } = contactContext;
-    const { _id, name, email, phone, type } = contact;
+    const { _id, name, email, phone,address, type } = contact;
 
     const onDelete = () => {
         deleteContact(_id);
@@ -77,6 +78,16 @@ export const ContactItem = ({ contact }) => {
                             />
                         </div>
                         <div>{phone}</div>
+                    </li>
+                )}
+                {address && (
+                    <li className='list-item'>
+                        <div>
+                            <MdHome
+                                style={{ fontSize: '150%', color: 'green' }}
+                            />
+                        </div>
+                        <div>{address}</div>
                     </li>
                 )}
             </ul>

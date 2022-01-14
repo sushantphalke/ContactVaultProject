@@ -10,7 +10,7 @@ const ContactForm = () => {
         phone: '',
         type: 'Personal',
     });
-    const { name, email, phone, type } = contact;
+    const { name, email, phone,address, type } = contact;
     const { addContact, current, updateContact, clearCurrent } = contactContext;
 
     useEffect(() => {
@@ -21,6 +21,7 @@ const ContactForm = () => {
                 name: '',
                 email: '',
                 phone: '',
+                address: '',
                 type: 'Personal',
             });
         }
@@ -40,6 +41,7 @@ const ContactForm = () => {
             name: '',
             email: '',
             phone: '',
+            address: '',
             type: 'Personal',
         });
     };
@@ -66,10 +68,19 @@ const ContactForm = () => {
                 onChange={onChange}
             />
             <input
-                type='text'
+                type='number'
                 placeholder='Phone'
                 name='phone'
                 value={phone}
+                onChange={onChange}
+                maxLength='10'
+                
+            />
+            <input
+                type='text'
+                placeholder='Address'
+                name='address'
+                value={address}
                 onChange={onChange}
             />
             <h5>Contact Type</h5>
