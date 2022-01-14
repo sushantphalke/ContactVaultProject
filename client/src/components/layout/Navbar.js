@@ -4,18 +4,25 @@ import { FaHome, FaSignOutAlt } from 'react-icons/fa';
 import { MdAssignmentInd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
+import ContactContext from '../../context/contact/contactContext';
 
 function Navbar({ title }) {
     const authContext = useContext(AuthContext);
+    const contactContext = useContext(ContactContext);
     const { isAuthenticated, logout, user } = authContext;
+    const {clearContacts}= contactContext;
+const onLogout=()=>{
+    logout();
+    clearContacts();
+}
 
     const authLinks = (
         <Fragment>
             <li>Hello {user && user.name}</li>
             <li>
-                <a href='#!'>
+                <Link onClick={onLogout} to='/login'>
                     <FaSignOutAlt /> <span className='hide-sm'>Logout</span>{' '}
-                </a>
+                </Link>
             </li>
         </Fragment>
     );
@@ -27,6 +34,9 @@ function Navbar({ title }) {
             </Link>
             <Link to='/login'>
                 <li className='navbar-btn'>Login</li>
+            </Link>
+            <Link to='/About'>
+                <li className='navbar-btn'>About</li>
             </Link>
         </Fragment>
     );
@@ -41,10 +51,6 @@ function Navbar({ title }) {
 
                 <ul className='navbar-ul'>
                     {isAuthenticated ? authLinks : guestLinks}
-
-                    <Link to='/About'>
-                        <li className='navbar-btn'>About</li>
-                    </Link>
                 </ul>
             </div>
         </>

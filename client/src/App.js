@@ -11,6 +11,7 @@ import Register from './components/auth/Register';
 import Login from './components/auth/login';
 import AlertState from './context/alert/AlertState';
 import setAuthToken from './utils/setAuthToken';
+import PrivateRoute from './components/routing/PrivateRoute';
 const title = 'ContactVault';
 
 if (localStorage.token) {

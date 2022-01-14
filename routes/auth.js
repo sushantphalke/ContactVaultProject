@@ -14,13 +14,13 @@ const User = require('../models/User');
 // @access  Privet
 router.get('/', auth, async (req, res) => {
     // res.send('Get logged in user');
-   try {
-    const user = await User.findById(req.user.id).select('-password');
-    res.json(user);
-   } catch (err) {
-     console.error(err.message);
-     res.status(500).send('Server Error');
-   }
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        res.json(user);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
 });
 
 // @route   POST api/auth
@@ -62,7 +62,7 @@ router.post(
                 payload,
                 config.get('jwtSecret'),
                 {
-                    expiresIn: 360000,
+                    expiresIn: 300000,
                 },
                 (err, token) => {
                     if (err) throw err;

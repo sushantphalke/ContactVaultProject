@@ -81,7 +81,7 @@ import {
     };
     // Logout
     const logout = () => {
-        console.log('logout');
+        dispatch({type:LOGOUT})
     };
     // clear errors
     const clearErrors = () => {
