@@ -44,7 +44,6 @@ const Register = (props) => {
                 email,
                 password,
             });
-            // setAlert('User Registerd Successfully','success');
         }
     };
     return (
