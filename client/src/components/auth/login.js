@@ -1,10 +1,28 @@
-import React, { useState } from 'react';
-
+import React, { useState, useContext, useEffect } from 'react';
+import AuthContext from '../../context/auth/authContext';
+import AlertContext from '../../context/alert/alertContext';
 const Login = () => {
+    const authContext = useContext(AuthContext);
+    const alertContext = useContext(AlertContext);
+    const { setAlert } = alertContext;
+    const { login, error, clearErrors, isAuthenticated } = authContext;
+
     const [user, setUser] = useState({
         email: '',
         password: '',
     });
+    useEffect(() => {
+        if (isAuthenticated) {
+            props.history.push('/');
+        }
+
+        if (error === 'Invalid Credentials') {
+            setAlert(error, 'danger');
+            clearErrors();
+        }
+        // eslint-disable-next-line
+    }, [error, isAuthenticated, props.history]);
+
     const { email, password } = user;
     const onChange = (e) =>
         setUser({
@@ -32,7 +50,6 @@ const Login = () => {
                         value={email}
                         onChange={onChange}
                         required
-                        
                     ></input>
                 </div>
                 <div className='form-group'>
