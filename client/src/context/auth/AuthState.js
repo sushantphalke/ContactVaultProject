@@ -13,7 +13,7 @@ import {
     CLEAR_ERRORS,
     USER_LOADED,
 } from '../types';
- const AuthState = (props) => {
+const AuthState = (props) => {
     const initialState = {
         token: localStorage.getItem('token'),
         isAuthenticated: null,
@@ -81,7 +81,7 @@ import {
     };
     // Logout
     const logout = () => {
-        dispatch({type:LOGOUT})
+        dispatch({ type: LOGOUT });
     };
     // clear errors
     const clearErrors = () => {
