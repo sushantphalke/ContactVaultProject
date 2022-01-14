@@ -14,6 +14,7 @@ import {
     USER_LOADED,
 } from '../types';
 const AuthState = (props) => {
+   
     const initialState = {
         token: localStorage.getItem('token'),
         isAuthenticated: null,
@@ -72,11 +73,13 @@ const AuthState = (props) => {
                 payload: res.data,
             });
             loadUser();
+           
         } catch (err) {
             dispatch({
                 type: LOGIN_FAIL,
                 payload: err.response.data.msg,
             });
+            
         }
     };
     // Logout

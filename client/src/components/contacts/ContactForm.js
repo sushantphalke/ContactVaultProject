@@ -68,11 +68,12 @@ const ContactForm = () => {
                 onChange={onChange}
             />
             <input
-                type='number'
+                type='text'
                 placeholder='Phone'
                 name='phone'
                 value={phone}
                 onChange={onChange}
+                minLength='8'
                 maxLength='10'
                 
             />

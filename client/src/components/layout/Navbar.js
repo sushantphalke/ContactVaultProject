@@ -10,18 +10,18 @@ function Navbar({ title }) {
     const authContext = useContext(AuthContext);
     const contactContext = useContext(ContactContext);
     const { isAuthenticated, logout, user } = authContext;
-    const {clearContacts}= contactContext;
-const onLogout=()=>{
-    logout();
-    clearContacts();
-}
+    const { clearContacts } = contactContext;
+    const onLogout = () => {
+        logout();
+        clearContacts();
+    };
 
     const authLinks = (
         <Fragment>
             <li>Hello {user && user.name}</li>
             <li>
-                <Link onClick={onLogout} to='/login'>
-                    <FaSignOutAlt /> <span className='hide-sm'>Logout</span>{' '}
+                <Link onClick={onLogout} to='/Login'>
+                    <FaSignOutAlt /> <span className='hide-sm'>Logout</span>
                 </Link>
             </li>
         </Fragment>

@@ -31,13 +31,14 @@ const Login = (props) => {
         });
     const onSubmit = (e) => {
         e.preventDefault();
-        if (email === '' || password === '') {
+        if (email === '' || password === '' || email === null || password === null) {
             setAlert('Please Fill In All Fields', 'danger');
         } else {
             login({
                 email,
                 password,
             });
+            
         }
     };
     return (
