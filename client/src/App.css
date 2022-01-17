@@ -242,17 +242,17 @@ img {
     color: #333;
 }
 
-.btn-primary,
-.bg-primary,
-.badge-primary,
-.alert-primary {
-    background: var(--primary-color);
-    color: #fff;
-    margin: 0.3em;
-    border-radius: 0.3em;
-    padding: 0.2em;
-    font-size: 0.8rem;
-}
+    .btn-primary,
+    .bg-primary,
+    .badge-primary,
+    .alert-primary {
+        background: var(--primary-color);
+        color: #fff;
+        margin: 0.3em;
+        border-radius: 0.3em;
+        padding: 0.2em;
+        font-size: 0.8rem;
+    }
 
 .bg-light {
     background: var(--light-color);
