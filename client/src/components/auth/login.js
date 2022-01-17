@@ -18,7 +18,6 @@ const Login = (props) => {
         }
         if (error === 'Invalid Credentials') {
             setAlert(error, 'danger');
-            clearErrors();
         }
         // eslint-disable-next-line
     }, [error, isAuthenticated, props.history]);
@@ -31,14 +30,18 @@ const Login = (props) => {
         });
     const onSubmit = (e) => {
         e.preventDefault();
-        if (email === '' || password === '' || email === null || password === null) {
+        if (
+            email === '' ||
+            password === '' ||
+            email === null ||
+            password === null
+        ) {
             setAlert('Please Fill In All Fields', 'danger');
         } else {
             login({
                 email,
                 password,
             });
-            
         }
     };
     return (
@@ -80,9 +83,12 @@ const Login = (props) => {
                     value='Login'
                     className='btn btn-primary btn-block'
                 />
-               <Link to='/register'> <button  className='btn btn-primary btn-block'>
-                    Not a user, Register here
-                </button></Link>
+                <Link to='/register'>
+                    {' '}
+                    <button className='btn btn-primary btn-block'>
+                        Not a user, Register here
+                    </button>
+                </Link>
             </form>
         </div>
     );
