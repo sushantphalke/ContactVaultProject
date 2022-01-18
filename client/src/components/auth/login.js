@@ -18,6 +18,7 @@ const Login = (props) => {
         }
         if (error === 'Invalid Credentials') {
             setAlert(error, 'danger');
+            clearErrors();
         }
         // eslint-disable-next-line
     }, [error, isAuthenticated, props.history]);
