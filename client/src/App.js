@@ -28,6 +28,7 @@ const App = () => {
                             <div className='container'>
                                 <Alerts />
                                 <Switch>
+                                    {/* <h1 className='navbar-btn'>ContactVault</h1> */}
                                     <Route
                                         exact
                                         path='/'
