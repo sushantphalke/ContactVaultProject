@@ -13,7 +13,7 @@ const Home = () => {
     const { logout } = authContext;
     const { clearContacts } = contactContext;
     
-// 
+
     const onLogout = () => {
         logout();
         clearContacts();
